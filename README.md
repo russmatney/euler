@@ -1,4 +1,4 @@
 euler
 =====
 
-Code for problems at http://projecteuler.net/
+Problems at http://projecteuler.net/
