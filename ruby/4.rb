@@ -22,6 +22,24 @@ def isPalindrome(x)
   return ret
 end
 
+def findPalindromes()
+  dromes = []
+  x = 999
+  y = 999
+  z = 12
+  while y > 99
+    z = x * y
+    if isPalindrome(z)
+      puts z
+      dromes << z
+    end
+    x = x - 1
+    if x < 100
+      y = y - 1
+      x = y
+    end
+  end
+  dromes
+end
 
-
-puts isPalindrome(3899359983)
+puts findPalindromes
