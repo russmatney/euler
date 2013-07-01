@@ -10,11 +10,9 @@ def isPalindrome(x)
   j = x.length - 1
   while k < j do
     if x[k] == x[j]
-      puts "#{x[k]} == #{x[j]}"
       k = k + 1
       j = j - 1
     else
-      puts "#{x[k]} != #{x[j]}"
       ret = false
       break
     end
@@ -30,7 +28,6 @@ def findPalindromes()
   while y > 99
     z = x * y
     if isPalindrome(z)
-      puts z
       dromes << z
     end
     x = x - 1
@@ -42,4 +39,6 @@ def findPalindromes()
   dromes
 end
 
-puts findPalindromes
+dromes = findPalindromes
+
+puts dromes.max
