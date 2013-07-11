@@ -28,3 +28,6 @@ def brutishForcish(tldr)
 end
 
 puts brutishForcish(252000000)
+
+# prolly better to build an array that is only multiples primes, 
+# then check only those values against the non-prime 1-20
