@@ -1,19 +1,21 @@
-module Euler1 where
+module Euler1 (main, fizzBuzz) where
 
-import Data.Sequence
+import Prelude
 
-main :: IO ()
+-- | print it
+main :: IO [()]
 main = do
-  mapM_ putStrLn $ fizzbuzz 31
+  traverse print fizzBuzz
 
-numbers length =
-  fromFunction length (+1)
+-- | Fizz'n'Buzz'n'Stuff
+fizzBuzz :: [String]
+fizzBuzz = do
+  x <- [0..15]
+  let isFizz = x `mod` 3 == 0
+      isBuzz = x `mod` 5 == 0
 
-fizzbuzz length =
-  fmap fizz $ numbers length
-
-fizz n | mod n 15 == 0 = "FizzBuzz"
-       | mod n 5 == 0  = "Buzz"
-       | mod n 3 == 0  = "Fizz"
-       | otherwise     = show n
-
+  case (isFizz, isBuzz) of
+    (False, False) -> pure $ show x
+    (True, False) -> pure "fizz"
+    (False, True) -> pure "buzz"
+    (True, True) -> pure "fizzbuzz"

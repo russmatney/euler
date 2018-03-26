@@ -6,13 +6,13 @@ fn main() {
     println!("largest prime factor of: {}: {}", number, factor)
 }
 
-fn largest_prime_factor_direct(number: u64, current: u64) -> u64 {
-    if number == current {
-        return number;
-    } else if number % current == 0 {
-        return largest_prime_factor_direct(number / current, current);
+fn largest_prime_factor_direct(myNum: u64, current: u64) -> u64 {
+    if myNum == current {
+        return myNum;
+    } else if myNum % current == 0 {
+        return largest_prime_factor_direct(myNum / current, current);
     } else {
-        return largest_prime_factor_direct(number, current + 1);
+        return largest_prime_factor_direct(myNum, current + 1);
     }
 }
 
